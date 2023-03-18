@@ -8,8 +8,6 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpRequest.BodyPublishers;
 import java.net.http.HttpResponse;
 import java.net.http.HttpResponse.BodyHandlers;
-import java.util.List;
-import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
@@ -126,7 +124,7 @@ public class TwitchClient {
   public CompletableFuture<String> subscribe(String event, long channelId){
     // Unfinished
     return client.sendAsync(HttpRequest.newBuilder().headers("Authorization", info.token(),
-    "Client-Id",info.clientId(),
+    "Client-Id",info.clientId(), 
     "Content-Type", "application/json").POST(
       BodyPublishers.ofString(
       """
@@ -138,7 +136,7 @@ public class TwitchClient {
 
 
   public void init() throws URISyntaxException, IOException, InterruptedException, ExecutionException, DeploymentException {
-        try(var connection = ClientManager.createClient().connectToServer(new ClientWebsocket(), URI.create("wss://irc-ws.chat.twitch.tv:443"));
+        try(var connection = ClientManager.createClient().connectToServer(new ClientWebsocket(), URI.create(twitchIRC));
         ) {
           while(connection.isOpen()){
           }

@@ -2,19 +2,14 @@ package com.digiunion.websocket;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
-import java.net.http.HttpClient;
 import java.util.Arrays;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
-import java.util.logging.LogRecord;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
-import org.glassfish.grizzly.threadpool.FixedThreadPool;
-import org.glassfish.tyrus.core.ExecutorServiceProvider;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -152,6 +147,7 @@ public class ClientWebsocket {
                                     logger.error("could not unset category on {}", channel);
                                 }
                                 break;
+                            case "قوانين": sendChannelMessage(channel, " -forsen -ممنوع حريم -ممنوع مخنثة -ممنوع طروش -ممنوع العنصرية بجميع الأنواع 🐵 🤜🏿 🤛 👨 -ممنوع يمنيه -ممنوع الحرق, Burning is prohibited -مسموح بالعنصرية بكل اشكالها -ممنوع مخانيث فورسن -ممنوع الانمي -لازم يكون معك سب فورسن -حروب only and قحاطين -مسموح بالحرق -ممنوع تكرار الكلام -لا تسب يا منيوك -ممنوع روابط سكس -ممنوع ترسل رجال بيض مفصخين بس خوال -ممنوع تقول نقا -لازم تسوي نقا تورك -ممنوع حط خشتك -ممنوع هنود -ممنوع البارتنر -ممنوع حقين الرياض -ممنوع القصمان -ممنوع ترسل");
                         }
                     }
                     else 
